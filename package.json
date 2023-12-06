@@ -2,10 +2,10 @@
   "name": "software-testing-assignment",
   "version": "1.0.0",
   "description": "## Purpose of this repository",
-  "main": "add.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "mocha 'src/test/*.test.js'"
   },
   "author": "",
   "license": "MIT",
