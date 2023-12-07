@@ -1,23 +1,37 @@
 import add from '../add.js';
 
-test('adds two positive numbers', () => {
-  expect(add(1, 2)).toBe(3);
-});
+describe('add function', () => {
+  test('correctly adds two positive numbers', () => {
+    expect(add(6, 4)).toBe(10);
+  });
 
-test('adds a positive number and zero', () => {
-  expect(add(1, 0)).toBe(1);
-});
+  test('adds zero correctly', () => {
+    expect(add(5, 0)).toBe(5);
+    expect(add(0, 5)).toBe(5);
+  });
 
-test('adds two negative numbers', () => {
-  expect(add(-1, -2)).toBe(-3);
-});
+  test('handles negative numbers', () => {
+    expect(add(-5, 3)).toBe(-2);
+    expect(add(5, -3)).toBe(2);
+    expect(add(-5, -3)).toBe(-8);
+  });
 
-test('adds a positive number and a negative number', () => {
-  expect(add(1, -2)).toBe(-1);
-});
+  test('handles floating point numbers', () => {
+    expect(add(0.1, 0.2)).toBeCloseTo(0.3);
+  });
 
-// test('throws an error when adding non-numeric values', () => {
-//   expect(() => {
-//     add('a', 'b');
-//   }).toThrow();
-// });
+  test('handles large numbers', () => {
+    expect(add(1000000, 1000000)).toBe(2000000);
+  });
+
+  // test('returns NaN for non-number inputs', () => {
+  //   expect(add('a', 'b')).toBeNaN();
+  //   expect(add('a', 5)).toBeNaN();
+  //   expect(add(5, 'a')).toBeNaN();
+  // });
+
+  test('returns the number itself if only one argument is provided', () => {
+    expect(add(5)).toBe(5);
+    expect(add(-5)).toBe(-5);
+  });
+});
