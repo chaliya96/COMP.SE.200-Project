@@ -31,4 +31,4 @@ jobs:
       - name: Upload coverage
         uses: coverallsapp/github-action@master
         with:
-          token: ${{ secrets.COVERALLS_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
