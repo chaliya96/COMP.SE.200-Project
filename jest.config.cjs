@@ -1,4 +1,4 @@
-// jest.config.js
+// jest.config.cjs
 
 module.exports = {
   testEnvironment: 'node',
@@ -9,4 +9,5 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest',
   },
+  coveragePathIgnorePatterns: ['/node_modules/', '/src/.internal/'],
 };
