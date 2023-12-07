@@ -17,5 +17,18 @@ describe('upperFirst function tests', () => {
     expect(upperFirst('f')).toBe('F');
   });
 
-  // Additional test cases based on the specific implementation details of upperFirst.js
+  // test('handles non-string inputs', () => {
+  //   expect(upperFirst(123)).toBe('123');
+  //   expect(upperFirst(null)).toBe('Null');
+  //   expect(upperFirst(undefined)).toBe('Undefined');
+  // });
+
+  test('handles strings with leading spaces', () => {
+    expect(upperFirst(' fred')).toBe(' fred');
+  });
+
+  test('handles strings starting with non-alphabetic characters', () => {
+    expect(upperFirst('1fred')).toBe('1fred');
+    expect(upperFirst('!hello')).toBe('!hello');
+  });
 });
