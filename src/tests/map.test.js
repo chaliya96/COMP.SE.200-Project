@@ -33,4 +33,28 @@ describe('map function', () => {
     const multiplyByIndex = (value, index, array) => value * index * array.length;
     expect(map([1, 2, 3], multiplyByIndex)).toEqual([0, 6, 18]);
   });
+
+  test('handles empty array', () => {
+    const iteratee = (num) => num * 2;
+    expect(map([], iteratee)).toEqual([]);
+  });
+  
+  // test('handles array with non-numeric values', () => {
+  //   const iteratee = (num) => num * 2;
+  //   expect(map(['a', {}, null], iteratee)).toEqual([NaN, NaN, NaN]);
+  // });
+  
+  test('handles iteratee returning undefined', () => {
+    const iteratee = () => undefined;
+    expect(map([1, 2, 3], iteratee)).toEqual([undefined, undefined, undefined]);
+  });
+  
+  test('handles iteratee throwing error', () => {
+    const iteratee = () => { throw new Error('Test error'); };
+    expect(() => map([1, 2, 3], iteratee)).toThrow('Test error');
+  });
+  
+  // test('handles iteratee not a function', () => {
+  //   expect(map([1, 2, 3], 'not a function')).toEqual([undefined, undefined, undefined]);
+  // });
 });
