@@ -41,4 +41,22 @@ describe('isBoolean function', () => {
     expect(isBoolean([])).toBe(false);
     expect(isBoolean({})).toBe(false);
   });
+
+  test('returns false for function', () => {
+    expect(isBoolean(() => {})).toBe(false);
+  });
+  
+  test('returns false for symbol', () => {
+    expect(isBoolean(Symbol('symbol'))).toBe(false);
+  });
+  
+  test('returns false for instance of a class', () => {
+    class MyClass {}
+    expect(isBoolean(new MyClass())).toBe(false);
+  });
+  
+  test('returns true for Boolean object', () => {
+    expect(isBoolean(new Boolean(true))).toBe(true);
+    expect(isBoolean(new Boolean(false))).toBe(true);
+  });
 });
