@@ -30,4 +30,13 @@ describe('words function', () => {
   test('handles strings with special characters', () => {
     expect(words('Hello, world!')).toEqual(['Hello', 'world']);
   });
+
+  // test('handles edge cases', () => {
+  //   expect(words('')).toEqual([]);
+  //   expect(words('   ')).toEqual([]);
+  //   expect(words(true)).toEqual([]);
+  //   expect(words(false)).toEqual([]);
+  //   expect(words({})).toEqual([]);
+  //   expect(words([])).toEqual([]);
+  // });
 });

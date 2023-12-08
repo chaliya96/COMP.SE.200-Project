@@ -31,4 +31,13 @@ describe('upperFirst function tests', () => {
     expect(upperFirst('1fred')).toBe('1fred');
     expect(upperFirst('!hello')).toBe('!hello');
   });
+
+  // test('handles edge cases', () => {
+  //   expect(upperFirst('')).toBe('');
+  //   expect(upperFirst('   ')).toBe('   ');
+  //   expect(upperFirst(true)).toBe('True');
+  //   expect(upperFirst(false)).toBe('False');
+  //   expect(upperFirst({})).toBe('[object Object]');
+  //   expect(upperFirst([])).toBe('');
+  // });
 });
