@@ -53,5 +53,25 @@ describe('isEmpty function', () => {
     const nonEmptyArgs = (function() { return arguments })(1, 2, 3);
     expect(isEmpty(nonEmptyArgs)).toBe(false);
   });
+
+  test('handles null and undefined', () => {
+    expect(isEmpty(null)).toBe(true);
+    expect(isEmpty(undefined)).toBe(true);
+  });
+  
+  test('handles boolean values', () => {
+    expect(isEmpty(true)).toBe(true);
+    expect(isEmpty(false)).toBe(true);
+  });
+  
+  test('handles numbers', () => {
+    expect(isEmpty(42)).toBe(true);
+    expect(isEmpty(0)).toBe(true);
+    expect(isEmpty(NaN)).toBe(true);
+  });
+  
+  test('handles functions', () => {
+    expect(isEmpty(() => {})).toBe(true);
+  });
   
 });
