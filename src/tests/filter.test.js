@@ -39,4 +39,24 @@ describe('filter function', () => {
     const largeArray = Array.from({ length: 10000 }, (_, i) => i);
     expect(filter(largeArray, n => n === 9999)).toEqual([9999]);
   });
+
+  test('handles array with null or undefined values', () => {
+    expect(filter([null, undefined, 1, 2, 3], value => value)).toEqual([1, 2, 3]);
+  });
+  
+  // test('handles predicate returning undefined', () => {
+  //   const numbers = [1, 2, 3, 4, 5];
+  //   expect(filter(numbers, () => undefined)).toEqual([]);
+  // });
+  
+  test('handles predicate throwing error', () => {
+    const numbers = [1, 2, 3, 4, 5];
+    const errorFunc = () => { throw new Error('Test error'); };
+    expect(() => filter(numbers, errorFunc)).toThrow('Test error');
+  });
+  
+  // test('handles predicate not a function', () => {
+  //   const numbers = [1, 2, 3, 4, 5];
+  //   expect(filter(numbers, 'not a function')).toEqual([]);
+  // });
 });
