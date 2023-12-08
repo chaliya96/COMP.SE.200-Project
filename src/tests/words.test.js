@@ -21,11 +21,11 @@ describe('words function', () => {
     expect(words('The quick brown fox')).toEqual(['The', 'quick', 'brown', 'fox']);
   });
 
-//   test('handles non-string inputs', () => {
-//     expect(words(123)).toEqual([]);
-//     expect(words(null)).toEqual([]);
-//     expect(words(undefined)).toEqual([]);
-//   });
+  // test('handles non-string inputs', () => {
+  //   expect(words(123)).toEqual([]);
+  //   expect(words(null)).toEqual([]);
+  //   expect(words(undefined)).toEqual([]);
+  // });
 
   test('handles strings with special characters', () => {
     expect(words('Hello, world!')).toEqual(['Hello', 'world']);

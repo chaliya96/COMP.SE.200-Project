@@ -25,9 +25,9 @@ describe('map function', () => {
     expect(map([1, 2, 3], addIndex)).toEqual([1, 3, 5]);
   });
 
-//   test('returns an array of undefined if no iteratee is provided', () => {
-//     expect(map([1, 2, 3])).toEqual([undefined, undefined, undefined]);
-//   });
+  // test('returns an array of undefined if no iteratee is provided', () => {
+  //   expect(map([1, 2, 3])).toEqual([undefined, undefined, undefined]);
+  // });
 
   test('iteratee can use index and array', () => {
     const multiplyByIndex = (value, index, array) => value * index * array.length;

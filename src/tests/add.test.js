@@ -10,6 +10,10 @@ describe('add function', () => {
     expect(add(0, 5)).toBe(5);
   });
 
+  test('adds numbers when both are zero', () => {
+    expect(add(0, 0)).toBe(0);
+  });
+
   test('handles negative numbers', () => {
     expect(add(-5, 3)).toBe(-2);
     expect(add(5, -3)).toBe(2);
@@ -28,6 +32,14 @@ describe('add function', () => {
   //   expect(add('a', 'b')).toBeNaN();
   //   expect(add('a', 5)).toBeNaN();
   //   expect(add(5, 'a')).toBeNaN();
+  // });
+
+  test('returns NaN when one of the numbers is NaN', () => {
+    expect(add(NaN, 2)).toBeNaN();
+  });
+
+  // test('returns NaN when one of the numbers is undefined', () => {
+  //   expect(add(undefined, 2)).toBeNaN();
   // });
 
   test('returns the number itself if only one argument is provided', () => {

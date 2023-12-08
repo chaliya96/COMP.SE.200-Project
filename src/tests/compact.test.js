@@ -1,9 +1,9 @@
 import compact from '../compact.js';
 
 describe('compact function', () => {
-//   test('removes all falsey values from an array', () => {
-//     expect(compact([0, 1, false, 2, '', 3])).toEqual([1, 2, 3]);
-//   });
+  // test('removes all falsey values from an array', () => {
+  //   expect(compact([0, 1, false, 2, '', 3])).toEqual([1, 2, 3]);
+  // });
 
   test('returns an empty array when all values are falsey', () => {
     expect(compact([0, false, '', null, undefined, NaN])).toEqual([]);
