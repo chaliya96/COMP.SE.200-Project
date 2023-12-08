@@ -36,4 +36,19 @@ describe('eq function', () => {
 //     expect(eq(1, new Number(1))).toBe(false);
 //     expect(eq(true, new Boolean(true))).toBe(false);
 //   });
+
+// test('handles null and undefined', () => {
+//   expect(eq(null, null)).toBe(true);
+//   expect(eq(undefined, undefined)).toBe(true);
+//   expect(eq(null, undefined)).toBe(false);
+// });
+
+test('returns false for different instances of the same class', () => {
+  class MyClass {}
+  expect(eq(new MyClass(), new MyClass())).toBe(false);
+});
+
+test('returns false for different functions', () => {
+  expect(eq(() => {}, () => {})).toBe(false);
+});
 });
