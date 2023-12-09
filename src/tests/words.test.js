@@ -21,22 +21,7 @@ describe('words function', () => {
     expect(words('The quick brown fox')).toEqual(['The', 'quick', 'brown', 'fox']);
   });
 
-  // test('handles non-string inputs', () => {
-  //   expect(words(123)).toEqual([]);
-  //   expect(words(null)).toEqual([]);
-  //   expect(words(undefined)).toEqual([]);
-  // });
-
   test('handles strings with special characters', () => {
     expect(words('Hello, world!')).toEqual(['Hello', 'world']);
   });
-
-  // test('handles edge cases', () => {
-  //   expect(words('')).toEqual([]);
-  //   expect(words('   ')).toEqual([]);
-  //   expect(words(true)).toEqual([]);
-  //   expect(words(false)).toEqual([]);
-  //   expect(words({})).toEqual([]);
-  //   expect(words([])).toEqual([]);
-  // });
 });
